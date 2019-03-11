@@ -3,8 +3,8 @@
 ### Create a site for people to store and view recipes.
 #### <strong>Note: Comment MOST of your view.py file. Start this project from scratch </strong>
 
-Index (Home page, 127.0.0.1): <strong>If you're logged out</strong>, welcome the user to your page. The index should ask you to log in or create a new user. No recipes are shown at this point. <strong>If you're logged in</strong>, the following pages are available as navigation:
-- Home Page (127.0.0.1): View all of the recipes you created
+Index/Home page/127.0.0.1: <strong>If you're logged out</strong>, welcome the user to your page. The index should ask you to log in or create a new user. No recipes are shown at this point. <strong>If you're logged in</strong>, the following pages are available as navigation:
+- Home Page/127.0.0.1: View all of the recipes you created
 - All Recipes Page: View recipes by all users
 - New Recipe Page: Create a new recipe
 - Profile Page: See your personal page and edit any necessary information.
@@ -31,3 +31,6 @@ The profile page should allow you to edit the logged in users:
 - Name
 - Email Address
 - Profile Picture
+
+## Challenge
+Include a delete button
