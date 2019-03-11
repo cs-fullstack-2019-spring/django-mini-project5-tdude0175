@@ -1,0 +1,13 @@
+{% extends 'RecipeRecordingApp/base.html' %}
+
+{% block header %}
+<h1>Edit the Recipe!!</h1>
+{% endblock header %}
+
+{% block content %}
+<form method="post">
+    {{form.as_p}}
+    <button>submit</button>
+    {% csrf_token %}
+</form>
+{% endblock content %}

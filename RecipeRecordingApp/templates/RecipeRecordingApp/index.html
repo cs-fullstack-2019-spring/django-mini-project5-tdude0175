@@ -1,0 +1,55 @@
+{% extends 'RecipeRecordingApp/base.html' %}
+
+{% block header %}
+<!--for rendering the user intro if the person is logged in with their username-->
+{% if user.is_authenticated%}
+<h1>Welcome {{ user.username }}</h1>
+<a href="{% url 'logout' %}"><button>Log Out Here</button></a>
+<p>
+    <a href="{% url 'ProfilePage' %}">
+        <button>Look at my Profile!</button>
+    </a>
+</p>
+{% else %}
+<!--For asking new people to sign in or log in -->
+<h1>Welcome, Please sign in</h1>
+<p>
+    <a href="{% url 'NewUser' %}"><button>Make an account</button></a>
+</p>
+<p>
+    <a href="{% url 'login' %}">
+        <button>Log in here</button>
+    </a>
+</p>
+
+{% endif %}
+{% endblock header %}
+
+
+{% block content %}
+
+{% if RecipeList %}
+<p>
+    <a href="{% url 'NewRecipe' %}"><button>Add a recipe Here!</button></a>
+</p>
+<p>
+    <a href="{% url 'AllRecipes' %}"><button>See All added Recipes</button></a>
+</p>
+<hr>
+{% for eachRecipe in RecipeList %}
+<!--prints each recipe-->
+<img src="{{ eachRecipe.PictureOfMeal}}" alt="MealPicture" height="20%" width="20%">
+<h1><a href="{% url 'RecipeDetails' eachRecipe.id %}">{{ eachRecipe.NameOfMeal }}</a></h1>
+<p>{{ eachRecipe.IngredientsForMeal}}</p>
+<p>{{ eachRecipe.DirectionsForMeal}}</p>
+<p>{{ eachRecipe.DateCreated}}</p>
+<p>
+    <a href="{% url 'EditRecipe' eachRecipe.id %}"><button>Edit Recipe</button></a>
+</p>
+
+{% endfor %}
+{% else %}
+<p><h3>No recipes here? why not add one??</h3></p>
+<a href="{% url 'NewRecipe' %}"><button>Add a recipe Here!</button></a>
+{% endif %}
+{% endblock content %}

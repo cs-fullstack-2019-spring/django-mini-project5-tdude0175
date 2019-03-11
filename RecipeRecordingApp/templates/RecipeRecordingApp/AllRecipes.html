@@ -1,0 +1,12 @@
+{% extends 'RecipeRecordingApp/base.html' %}
+
+{% block header %}
+<h1>All Recipes Made</h1>
+<a href="{% url 'index' %}"><button>ReturnHome</button></a>
+{% endblock header %}
+
+{% block content %}
+{% for eachRecipe in AllRecipes %}
+<h1><a href="{% url 'RecipeDetails' eachRecipe.id %}">{{ eachRecipe.NameOfMeal }}</a></h1>
+{% endfor %}
+{% endblock content %}

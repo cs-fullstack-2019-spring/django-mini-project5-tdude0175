@@ -1,0 +1,14 @@
+{% extends 'RecipeRecordingApp/base.html' %}
+
+{% block header %}
+<h1>Recipe Details Page</h1>
+<a href="{% url 'index' %}"><button>Home</button></a>
+{% endblock header %}
+
+{% block content %}
+<img src="{{ Recipe.PictureOfMeal }}" alt="Picture" height="20%" width="20%">
+<p>{{ Recipe.NameOfMeal }}</p>
+<p>{{ Recipe.IngredientsForMeal }}</p>
+<p>{{ Recipe.DirectionsForMeal }}</p>
+<p>{{ Recipe.DateCreated }}</p>
+{% endblock content %}

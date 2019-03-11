@@ -1,0 +1,22 @@
+{% extends 'RecipeRecordingApp/base.html' %}
+
+{% block header %}
+<h1>{{user.username}}s profile page</h1>
+<a href="{% url 'index' %}">
+    <button>Return Home</button>
+</a>
+{% endblock header %}
+
+{% block content %}
+<img src="{{ ModelItems.ProfilePicture }}" alt="Picture">
+<p>
+{{ModelItems.Name}}
+</p>
+
+<h3>Edit Info</h3>
+<form method="post">
+    {{form.as_p}}
+    <button>Submit</button>
+    {% csrf_token %}
+</form>
+{% endblock content %}
