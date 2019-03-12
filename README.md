@@ -34,3 +34,5 @@ The profile page should allow you to edit the logged in users:
 
 ## Challenge
 Include a delete button
+<hr>
+3.5 points. When a user is not logged in the add recipe button doesn't work. While on the create a new user page, the log in button points to the wrong page. 
